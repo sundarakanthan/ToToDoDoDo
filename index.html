@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm  bg-warning">
+        <a class="navbar-brand" href="">Weblogger</a>
+           <ul class="navbar-nav ms-auto">
+               <li class="nav-item text-light"><b><a class="nav-link" href="">Home</a></b></li>
+               <li class="nav-item text-light"><b><a class="nav-link" href="">About</a></b></li>
+               <li class="nav-item text-light"><b><a class="nav-link" href="">Contact</a></b></li>
+           </ul>
+       </nav>
+    <br>
+    <h1 class="display-1" style="text-align: center;padding: 20px;">User Log</h1><br>
+
+
+    <form action="" style="padding: 20px;">
+        
+        <input placeholder="Enter name" type="text" id="name-input">
+
+        <input placeholder="Enter Age" type="number" id="age-input">
+
+        <button class="btn btn-primary add-button" onclick="addDetails()">Add</button>
+        <button class="btn btn-outline-danger remove-button" onclick="removeDetails()">Remove</button>
+        <button class="btn btn-outline-dark" onclick="clearTable()">Clear Table</button>
+
+
+    </form>
+
+   
+    <br><br>
+   <p class="lead alert alert-danger" style="display:none;font-size: 20px;" id="para">Please fill out the fields.<img id="close-icon" style="cursor: pointer;" src="icons8-x.svg" height="25px"></p>
+
+    <div class="table-responsive-xl" style="padding: 20px;">
+
+        <table class="table">
+             <tr>
+                 <th>Sno</th>
+                 <th>Name</th>
+                 <th>Age</th>
+            </tr>  
+            <tbody> </tbody>   
+        </table>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        let closeIcon = document.getElementById('close-icon');
+       
+       
+
+
+        let addButton = document.getElementById('add-button');
+        // let para = document.getElementById('para');
+        let errMsg = document.getElementById('para');
+
+        let removeButton = document.getElementById('remove-button');
+
+        let sno = 1;
+
+        // let table_name_data = document.getElementById('table-data-name');
+        // let table_age_data = document.getElementById('table-data-age');
+
+
+        let addDetails = () => {
+
+            closeIcon.addEventListener("click",closeError);
+
+                function closeError(){
+                    para.style.display="none";
+                }
+
+
+            event.preventDefault();
+           
+            let nameValue = document.getElementById('name-input').value;
+            let ageValue = document.getElementById('age-input').value;
+
+            
+
+            let tableContainer = document.getElementsByClassName('table')[0];
+
+
+            let tableBody = document.querySelector('tbody');
+          
+
+            let tableRow = document.createElement('tr');
+            tableRow.id = 'row';
+
+
+            let serialCell = document.createElement('td');            
+            serialCell.textContent = sno++;
+
+            let nameCell = document.createElement('td');
+            nameCell.textContent = nameValue;
+
+           
+
+            let ageCell = document.createElement('td');
+            ageCell.textContent = ageValue;
+
+        if(nameValue === "" || ageValue === "" || ageValue<=0){
+                para.style.display = "flex";
+                para.style.justifyContent = "space-between";
+            }
+            else{
+
+           
+            tableRow.appendChild(serialCell);
+            tableRow.appendChild(nameCell);
+            tableRow.appendChild(ageCell);
+            tableBody.appendChild(tableRow);
+            
+            
+
+           
+
+        }
+    }
+
+        let removeDetails = () =>{
+
+           event.preventDefault();
+           let row = document.getElementById('row')
+            row.remove();
+           
+        }
+
+        let clearTable = () =>{
+            event.preventDefault();
+            let table = document.querySelectorAll('table tr');
+            for (let i = 1; i < table.length; i++) {
+            table[i].remove(); // Remove all rows except the first one
+             }
+                }
+
+//    let displayName= () =>{
+//         event.preventDefault();
+//         para.innerText = nameInput.value;
+//    }
+        
+       
+    </script>
+</body>
+</html>
