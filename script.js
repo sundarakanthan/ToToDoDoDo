@@ -53,6 +53,7 @@ let removeButton;
                 para.textContent = 'Please fill all the fields.'
                 para.style.justifyContent = "space-between";
                 setTimeout(()=>{
+                    
                     para.style.display='none';
                 },2000)
             }
