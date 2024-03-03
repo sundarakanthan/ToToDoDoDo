@@ -1,8 +1,7 @@
 let closeIcon = document.getElementById('close-icon');
+let tickButton;
+let removeButton;
 
-let tickButton = document.createElement('td');
-
-let removeButton = document.createElement('td')
        
         let addButton = document.getElementById('add-button');
         // let para = document.getElementById('para');
@@ -16,12 +15,10 @@ let removeButton = document.createElement('td')
     */
         let addTask = () => {
 
-            closeIcon.addEventListener("click",closeError);
+             tickButton = document.createElement('td');
 
-                function closeError(){
-                    para.style.display="none";
-                }
-    event.preventDefault();
+             removeButton = document.createElement('td');
+            event.preventDefault();
            
             let TaskNameValue = document.getElementById('name-input').value;
             let priorityValue = document.getElementById('age-input').value;
