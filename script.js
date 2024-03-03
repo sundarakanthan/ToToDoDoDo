@@ -32,7 +32,7 @@ let removeButton;
 
             
             removeButton.id='removeButton';
-            removeButton.innerHTML = '<button style="margin:0" class="btn btn-outline-danger">Close</button>'
+            removeButton.innerHTML = '<button style="margin:0" class="btn btn-outline-danger">Remove</button>'
 
             
             tickButton.id="tickButton";
@@ -68,22 +68,26 @@ let removeButton;
             tableRow.appendChild(removeButton);
             tableBody.appendChild(tableRow);     
             }
+            let markAsDone = (task) => {
+                console.log(task);
+       }
+
+        //Mark a task as done(strikethrough) for each task when button is clicked
+    //Remove the specific task using button.
+    let removeTask = (event) => {
+        let taskRow = event.target.closest('tr')
+        taskRow.remove();
+       
+        // You may need to adjust the sno variable if you want to maintain sequential numbering after deletion
+        // sno--;
     }
 
-    //Mark a task as done(strikethrough) for each task when button is clicked
-    let markAsDone = (task) => {
-                 console.log(task);
-        }
-        tickButton.addEventListener("click",markAsDone);
-        
-        //Remove the specific task using button.
-        let removeTask = () =>{
+       tickButton.addEventListener("click",markAsDone);
+       removeButton.addEventListener("click",removeTask);
+       
+    }
 
-           event.preventDefault();
-           let row = document.getElementById('row')
-            row.remove();
-            sno = 1;           
-        }
+   
 
         //No changes here
         let clearEverything = () =>{
