@@ -69,18 +69,25 @@ let removeButton;
             tableBody.appendChild(tableRow);     
             }
             let markAsDone = (task) => {
-                console.log(task);
+                alert('done')
        }
 
         //Mark a task as done(strikethrough) for each task when button is clicked
     //Remove the specific task using button.
     let removeTask = (event) => {
-        let taskRow = event.target.closest('tr')
+        let taskRow = event.target.closest('tr');
         taskRow.remove();
-       
-        // You may need to adjust the sno variable if you want to maintain sequential numbering after deletion
-        // sno--;
-    }
+    
+        // Update serial numbers for remaining rows
+        let tableRows = document.querySelectorAll('table tbody tr');
+        sno = 1; // Reset sno to 1
+        tableRows.forEach((row) => {
+            let serialCell = row.querySelector('td:first-child');
+            serialCell.textContent = sno++;
+        });
+    };
+    
+    
 
        tickButton.addEventListener("click",markAsDone);
        removeButton.addEventListener("click",removeTask);
