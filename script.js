@@ -66,29 +66,24 @@ let removeButton;
             tableRow.appendChild(priorityCell);
             tableRow.appendChild(tickButton);
             tableRow.appendChild(removeButton);
-            tableBody.appendChild(tableRow);     
+            tableBody.appendChild(tableRow); 
+               
             }
+            //Mark a task as done(strikethrough) for each task when button is clicked
+            //Remove the specific task using button.
             let markAsDone = (task) => {
-                alert('done')
+                // console.log(task);
+                 let currentRow =  task.target.closest('tr');
+                 currentRow.style.textDecoration= "line-through"
+                 currentRow.style.color = 'red'
+                
+                
        }
-
-        //Mark a task as done(strikethrough) for each task when button is clicked
-    //Remove the specific task using button.
     let removeTask = (event) => {
         let taskRow = event.target.closest('tr');
-        taskRow.remove();
-    
-        // Update serial numbers for remaining rows
-        let tableRows = document.querySelectorAll('table tbody tr');
-        sno = 1; // Reset sno to 1
-        tableRows.forEach((row) => {
-            let serialCell = row.querySelector('td:first-child');
-            serialCell.textContent = sno++;
-        });
-    };
-    
-    
-
+        taskRow.remove();  
+      };
+       
        tickButton.addEventListener("click",markAsDone);
        removeButton.addEventListener("click",removeTask);
        
