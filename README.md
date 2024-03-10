@@ -7,7 +7,7 @@ Implemented form validation for invalid inputs.
 
 
 <br><br>
-**DEMO :** [demo link](https://sundarakanthan.github.io/ToToDoDoDo/) .
+**[DEMO LINK](https://sundarakanthan.github.io/ToToDoDoDo/) .**
 
 
 
