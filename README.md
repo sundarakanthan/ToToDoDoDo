@@ -7,7 +7,7 @@ Implemented form validation for invalid inputs.
 
 
 <br><br>
-[An Internal Link to a Section Heading] **DEMO :** https://sundarakanthan.github.io/ToToDoDoDo/ .
+[An Internal Link to a Section Heading]**DEMO :** https://sundarakanthan.github.io/ToToDoDoDo/ .
 
 
 
