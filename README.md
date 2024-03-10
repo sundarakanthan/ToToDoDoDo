@@ -21,7 +21,7 @@ Implemented form validation for invalid inputs.
 
 <ul>
   <li>Sorting the tasks according to the priority</li>
-  <li>SEnancing the UI design.</li>
+  <li>Enancing the UI design.</li>
   <li>Timer and reminder through notification for each tasks.</li>
 </ul>
 
