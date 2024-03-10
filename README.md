@@ -13,7 +13,7 @@ Implemented form validation for invalid inputs.
 
 <h3>Instructions:</h3>
 
-- [x] Run this application in your browser using the link.
+- [x] Run this application in your browser using the demo link.
 - [x] Enter your task name and priority value of the task in the appropriate input boxes and submit.
 - [x] You can remove the task by clicking the **remove** button or you can click the **done** button to mark it as done .
 
