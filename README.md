@@ -3,9 +3,13 @@
 Totodododo is a responsive to-do list app built using **HTML5, CSS3, Bootstrap5,** and **Javascript**.
 Used Bootstrap's table to organize the data in a clear readable format.  **Javascript DOM** for accessing and manipulating the HTML document for making dynamic operations. <br>
 Used **Bootstrap's components** for making responsive components like buttons, form inputs, tables, alert boxes, etc.<br>
-DEMO : https://sundarakanthan.github.io/ToToDoDoDo/ .
-<br>
 Implemented form validation for invalid inputs.
+
+
+<br><br>
+[An Internal Link to a Section Heading] **DEMO :** https://sundarakanthan.github.io/ToToDoDoDo/ .
+
+
 
 <h3>Instructions:</h3>
 
